@@ -1,7 +1,8 @@
 class Gigasecond
+  GIGASECOND = 10**9
+
   def Gigasecond.from(time)
-    raise ArgumentError unless time.is_a? Time
-    time + (10**9)
+    time + GIGASECOND
   end
 end
 
