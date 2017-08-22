@@ -1,10 +1,6 @@
 class Hamming
   def Hamming.compute(dna1, dna2)
-    if(((dna1 && dna2) && (dna1.length == dna2.length)))
-      diff = dna1.chars.zip(dna2.chars).count{ |x| (x[0]<=>x[1]).abs != 0}
-      return diff
-    end
-
+    return 0.upto(dna1.size).count { |x| (dna1[x] != dna2[x]) } if(((dna1 && dna2) && (dna1.length == dna2.length)))
     raise ArgumentError
   end
 end
