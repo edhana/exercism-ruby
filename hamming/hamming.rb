@@ -1,15 +1,11 @@
 class Hamming
   def Hamming.compute(dna1, dna2)
-    raise ArgumentError if dna1.nil? || dna2.nil?
-    raise ArgumentError if dna1.length != dna2.length
- 
-    dna1_arr = dna1.split(//)
-    dna2_arr = dna2.split(//)
+    if(((dna1 && dna2) && (dna1.length == dna2.length)))
+      diff = dna1.chars.zip(dna2.chars).count{ |x| (x[0]<=>x[1]).abs != 0}
+      return diff
+    end
 
-    diffs = 0
-    dna1_arr.zip(dna2_arr).each{ |a1, a2| diffs += 1 if a1 != a2 }
-
-    return diffs
+    raise ArgumentError
   end
 end
 
