@@ -3,7 +3,7 @@ class Complement
     parser = {"G" => "C", "C" => "G", "T" => "A", "A" => "U"}
     return strand.gsub(/[GCTA]/, parser) if strand && (strand.chars.all? { |c| "CGTA".chars.include? c })
 
-    return ''
+    ''
   end
 end
 
