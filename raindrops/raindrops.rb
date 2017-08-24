@@ -5,9 +5,7 @@ class Raindrops
   def self.convert(number)
     factors = (1..number).chunk { |e|
       (number % e).zero? && (DICT.keys.include? e)
-    }.select { |ary|
-      ary[0] == true
-    }.flat_map { |m| [m[1][0]] }
+    }.select { |ary| ary[0] }.flat_map { |m| [m[1][0]] }
 
     phrase = ''
     factors.each { |f| phrase += DICT[f] }
